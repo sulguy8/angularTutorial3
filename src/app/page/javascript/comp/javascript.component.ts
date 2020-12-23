@@ -120,7 +120,14 @@ export class JavascriptComponent implements OnInit {
   }
 
   etc() {
-    // 삼항연산자
+    // # 삼항연산자
+    let flag = true;
+    let text = flag == true? 'value : true' : 'value : false'; 
+    //  flag == true? text = 'true' : text = 'false';  이렇게 해도 됨
+    console.log(text)
 
+    // # 뭐라고 부르는지 잘 모르겠는데 text값이 있다면 text, 없으면 null
+    let result = text || null; 
+    console.log(result)
   }
 }
