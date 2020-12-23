@@ -1,0 +1,53 @@
+<!-- ngIf -->
+<div *ngIf="true">ngIf</div>
+
+<!-- ngModel, ngModelChange -->
+<input type="text" [(ngModel)]="ngModel" (ngModelChange)="ngModelChange()" />
+<hr>
+
+<!-- ngFor -->
+<ul>
+    <li *ngFor="let item of list">{{ item }}</li>
+</ul>
+<hr>
+<table style="border: solid;">
+    <tr>
+        <th *ngFor="let item of list">{{ item }}</th>
+    </tr>
+    <tr>
+        <td *ngFor="let item of list">{{ item }}</td>
+    </tr>
+</table>
+<hr>
+<select>
+    <option *ngFor="let item of list" [value]="item">{{ item }}</option>
+</select>
+<hr>
+<div>
+    <div *ngFor="let list1 of list2">
+        <div style="display: inline;" *ngFor="let list of list1">
+            {{ list }}
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- ngClass, ngStyle -->
+<div [ngClass]="true? 'true':'false'">ngClass</div>
+<div [ngStyle]="true? { color : 'red' }: { color : 'blue' }">ngStyle</div>
+<hr>
+
+<!-- Attributes -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes -->
+<input type="checkbox" [hidden]="hidden" [checked]="checked">CheckBox <br>
+<input type="radio" [hidden]="hidden" [checked]="checked">Radio <br>
+<hr>
+
+<!-- DOM EVENTS -->
+<!-- https://www.w3schools.com/jsref/dom_obj_event.asp -->
+<input type="text" (click)="click()" (change)="change()"/> <br>
+<hr>
+
+<!-- ViewChild -->
+<input #viewChild1 type="text" /><button (click)="viewChild()">클릭</button>
+<button (click)="documentQuerySelector()">querySelector</button>
